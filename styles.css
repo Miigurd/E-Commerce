@@ -130,6 +130,19 @@ nav .menu{
 .slide-name{
     font-size: 96px;
 }
+.slide-btn{
+    padding: 10px;
+    width: 20%;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    transition: 0.5s;
+}
+.slide-btn:hover{
+    background: #ff7d7d;
+    color: #fff;
+}
 .slide img{
     width: 1200px;
     height: 750px;
