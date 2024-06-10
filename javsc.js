@@ -49,3 +49,39 @@ registerLink.addEventListener('click', () => {
 loginLink.addEventListener('click', () => {
     wrapper.classList.remove('active');
 })
+
+function showDiv() {
+    var x = document.getElementById("ticket");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+}
+
+function closeDiv() {
+    var x = document.getElementById("ticket");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+}
+
+function addToCart(button) {
+    let cartItemsCount = document.getElementById('ticket-items');
+    let currentCount = parseInt(cartItemsCount.innerText);
+    currentCount++;
+    cartItemsCount.innerText = currentCount;
+    
+    const item = button.parentElement;
+    const itemName = item.getAttribute('data-name');
+    const itemPrice = parseFloat(item.getAttribute('data-price'));
+
+    const cartItems = document.getElementById('ticket-items-list');
+    const cartItem = document.createElement('li');
+    cartItem.innerHTML = `
+        <span>${itemName}</span> - $<span>${itemPrice}</span>
+    `;
+    cartItems.appendChild(cartItem);
+}

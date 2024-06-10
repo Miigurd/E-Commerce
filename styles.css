@@ -44,9 +44,6 @@ nav .menu{
 .menu ul a::before{
     transition: all .5s;
 }
-.menu ul a:hover{
-    font-weight: bold;
-}
 .menu ul a::after{
     position: absolute;
     bottom: 0;
@@ -61,6 +58,76 @@ nav .menu{
 }
 .menu ul a:hover::after{
     width: 100%;
+}
+.ticket-link{
+    margin: 0 8px;
+    padding: 15px 12px;
+    display: inline-flex;
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+.ticket-link,
+.ticket-link::after,
+.ticket-link::before{
+    transition: all .5s;
+}
+.ticket-link::after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+}
+.ticket-link:hover::after{
+    width: 100%;
+}
+.ticket{
+    top: 0;
+    width: 500px; 
+    right: 0; 
+    bottom: 0;
+    background: red; 
+    position: fixed;
+    z-index: 99;
+    display: none;
+}
+.close-btn{
+    float: right;
+    margin: 20px 20px;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.ticket-heading{
+    padding: 10px 12px;
+}
+#ticket-items-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+}
+.book-btn{
+    background: white;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 12px;
+    float: right;
+    cursor: pointer;
+}
+.book-btn a{
+    text-decoration: none;
 }
 .search{
     width: max-content;

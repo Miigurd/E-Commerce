@@ -21,10 +21,19 @@
                 <li><a href="#">Stays</a></li>
                 <li><a href="flights.html">Flights</a></li>
                 <li><a href="car.html">Rent-A-Car</a></li>
+                <li><button class="ticket-link" onclick="showDiv()"><i class="ri-hotel-fill"><span id="ticket-items">0</span></i></button></li>
             </ul>
         </div>
     </nav>
     <br>
+    <div id="ticket" class="ticket">
+        <button class="close-btn" onclick="closeDiv()"><i class="ri-close-large-fill"></i></button>
+        <h2 class="ticket-heading">Pending Tickets</h2>
+        <div id="ticket-items-list" class="ticket-items-list"></div>
+        <button class="book-btn">
+            <a href="staybooked.html" onclick="if (!confirm('Are you sure you want to book this place/s?')) return false;">Book</a>
+        </button>
+    </div>
     <div class="form">
         <form>
             <div class="search">
@@ -42,10 +51,10 @@
             <div class="product-card">
                 <div class="product-image">
                     <img src="images/olongapo.jpg" class="product-thumb" alt="">
-                    <div class="product-card-body">
+                    <div class="product-card-body" data-name="Olongapo" data-price="130.69">
                         <p class="product-card-info"><span class="rating">8.8/10</span><br><br><span class="rating-equivalent">
                             Excellent</span><br><span class="review">(170 Properties)</span></p>
-                        <a href="staybooked.html" onclick="if (!confirm('Are you sure you want to book this place?')) return false;"><button class="card-btn">book a stay</button></a>
+                        <button class="card-btn" onclick="addToCart()">book a stay</button>
                     </div>
                 </div>
                 <div class="product-info">
@@ -56,10 +65,10 @@
             <div class="product-card">
                 <div class="product-image">
                     <img src="images/angeles.jpg" class="product-thumb" alt="">
-                    <div class="product-card-body">
+                    <div class="product-card-body" data-name="Angeles City" data-price="130.69">
                         <p class="product-card-info"><span class="rating">9.4/10</span><br><br><span class="rating-equivalent">
                             Exceptional</span><br><span class="review">(125 Properties)</span></p>
-                        <a href="staybooked.html" onclick="if (!confirm('Are you sure you want to book this place?')) return false;"><button class="card-btn">book a stay</button></a>
+                        <button class="add-to-cart card-btn" onclick="addToCart()">book a stay</button>
                     </div>
                 </div>
                 <div class="product-info">
