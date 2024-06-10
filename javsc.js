@@ -52,7 +52,7 @@ loginLink.addEventListener('click', () => {
 
 function showDiv() {
     var x = document.getElementById("ticket");
-    if (x.style.display === "none") {
+    if (x.style.display == "none") {
       x.style.display = "block";
     } else {
       x.style.display = "none";
@@ -61,7 +61,7 @@ function showDiv() {
 
 function closeDiv() {
     var x = document.getElementById("ticket");
-    if (x.style.display === "none") {
+    if (x.style.display == "none") {
       x.style.display = "block";
     } else {
       x.style.display = "none";
@@ -77,11 +77,18 @@ function addToCart(button) {
     const item = button.parentElement;
     const itemName = item.getAttribute('data-name');
     const itemPrice = parseFloat(item.getAttribute('data-price'));
+    const itemImg = item.getAttribute('data-img');
 
     const cartItems = document.getElementById('ticket-items-list');
     const cartItem = document.createElement('li');
     cartItem.innerHTML = `
+        <img src="${itemImg}" alt="${itemName}">
         <span>${itemName}</span> - $<span>${itemPrice}</span>
     `;
     cartItems.appendChild(cartItem);
+
+    let totalPrice = document.getElementById('total-price');
+    let currentPrice = parseFloat(totalPrice.innerText);
+    currentPrice += itemPrice;
+    totalPrice.innerText = currentPrice.toFixed(2);
 }

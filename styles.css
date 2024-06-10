@@ -94,9 +94,13 @@ nav .menu{
     width: 500px; 
     right: 0; 
     bottom: 0;
-    background: red; 
+    background: white;
+    border-left: 1px solid black;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
     position: fixed;
     z-index: 99;
+    overflow-y: auto;
     display: none;
 }
 .close-btn{
@@ -110,11 +114,26 @@ nav .menu{
 .ticket-heading{
     padding: 10px 12px;
 }
+.ticket p{
+    float: left;
+    margin-left: 15px;
+}
 #ticket-items-list li {
     display: flex;
     align-items: center;
+    margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: 12px;
     padding: 10px 12px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+#ticket-items-list img {
+    width: 200px;
+    height: 300px;
+    margin-right: 10px;
+    object-fit: cover;
+    border-radius: 15px;
 }
 .book-btn{
     background: white;
@@ -122,7 +141,7 @@ nav .menu{
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
-    margin: 12px;
+    margin-right: 12px;
     float: right;
     cursor: pointer;
 }

@@ -21,10 +21,20 @@
                 <li><a href="stays.html">Stays</a></li>
                 <li><a href="#">Flights</a></li>
                 <li><a href="car.html">Rent-A-Car</a></li>
+                <li><button class="ticket-link" onclick="showDiv()"><i class="ri-plane-fill"><span id="ticket-items">0</span></i></button></li>
             </ul>
         </div>
     </nav>
     <br>
+    <div id="ticket" class="ticket">
+        <button class="close-btn" onclick="closeDiv()"><i class="ri-close-large-fill"></i></button>
+        <h2 class="ticket-heading">Pending Tickets</h2>
+        <ul id="ticket-items-list" class="ticket-items-list"></ul>
+        <p>Total Price: $<span id="total-price">0</span></p>
+        <button class="book-btn">
+            <a href="flightbooked.html" onclick="if (!confirm('Are you sure you want to book this place/s?')) return false;">Book</a>
+        </button>
+    </div>
     <div class="form">
         <form>
             <div class="search">
@@ -43,42 +53,42 @@
             <input type="radio" name="radio-btn" id="radio4">
             <input type="radio" name="radio-btn" id="radio5">
             <div class="slide first">
-                <div class="slide-body">
+                <div class="slide-body" data-name="Phuket Town" data-price="74.51" data-img="images/phuket.jpg">
                     <h1 class="slide-name">Phuket Town</h1>
                     <p class="slide-details">Sun, Jun 30 - One Way</p><br>
-                    <a href="flightbooked.html" onclick="if (!confirm('Are you sure you want to book this flight?')) return false;"><button class="slide-btn">book a flight</button></a>
+                    <button class="slide-btn" onclick="addToCart(this)">book a flight</button>
                 </div>
                 <img src="images/phuket.jpg" alt="">
             </div>
             <div class="slide">
-                <div class="slide-body">
+                <div class="slide-body" data-name="Chiang Mai" data-price="117.91" data-img="images/chiang.jpg">
                     <h1 class="slide-name">Chiang Mai</h1>
                     <p class="slide-details">Sun, Jun 30 - One Way</p><br>
-                    <a href="flightbooked.html" onclick="if (!confirm('Are you sure you want to book this flight?')) return false;"><button class="slide-btn">book a flight</button></a>
+                    <button class="slide-btn" onclick="addToCart(this)">book a flight</button>
                 </div>
                 <img src="images/chiang.jpg" alt="">
             </div>
             <div class="slide">
-                <div class="slide-body">
+                <div class="slide-body" data-name="Phnom Penh" data-price="138.29" data-img="images/phnom.jpg">
                     <h1 class="slide-name">Phnom Penh</h1>
                     <p class="slide-details">Sun, Jun 30 - One Way</p><br>
-                    <a href="flightbooked.html" onclick="if (!confirm('Are you sure you want to book this flight?')) return false;"><button class="slide-btn">book a flight</button></a>
+                    <button class="slide-btn" onclick="addToCart(this)">book a flight</button>
                 </div>
                 <img src="images/phnom.jpg" alt="">
             </div>
             <div class="slide">
-                <div class="slide-body">
+                <div class="slide-body" data-name="Madrid" data-price="198.08" data-img="images/madrid.jpg">
                     <h1 class="slide-name">Madrid</h1>
                     <p class="slide-details">Sun, Jun 30 - One Way</p><br>
-                    <a href="flightbooked.html" onclick="if (!confirm('Are you sure you want to book this flight?')) return false;"><button class="slide-btn">book a flight</button></a>
+                    <button class="slide-btn" onclick="addToCart(this)">book a flight</button>
                 </div>
                 <img src="images/madrid.jpg" alt="">
             </div>
             <div class="slide">
-                <div class="slide-body">
+                <div class="slide-body" data-name="Brisbane" data-price="59.63" data-img="images/brisbane.jpg">
                     <h1 class="slide-name">Brisbane</h1>
                     <p class="slide-details">Sun, Jun 30 - One Way</p><br>
-                    <a href="flightbooked.html" onclick="if (!confirm('Are you sure you want to book this flight?')) return false;"><button class="slide-btn">book a flight</button></a>
+                    <button class="slide-btn" onclick="addToCart(this)">book a flight</button>
                 </div>
                 <img src="images/brisbane.jpg" alt="">
             </div>
@@ -107,10 +117,10 @@
             <div class="product-card">
                 <div class="product-image">
                     <img src="images/hongkong.jpg" class="product-thumb" alt="">
-                    <div class="product-card-body">
+                    <div class="product-card-body" data-name="Hong Kong" data-price="174.51" data-img="images/hongkong.jpg">
                         <p class="product-card-info"><span class="rating">Round Trip</span><br><br><span class="rating-equivalent">
                             Jun 13: 3:45PM<br>Jun 20: 7:40PM</span></p>
-                        <a href="flightbooked.html" onclick="if (!confirm('Are you sure you want to book this flight?')) return false;"><button class="card-btn">book a flight</button></a>
+                        <button class="card-btn" onclick="addToCart(this)">book a stay</button>
                     </div>
                 </div>
                 <div class="product-info">
@@ -122,10 +132,10 @@
             <div class="product-card">
                 <div class="product-image">
                     <img src="images/seoul.jpg" class="product-thumb" alt="">
-                    <div class="product-card-body">
+                    <div class="product-card-body" data-name="Seoul" data-price="217.90" data-img="images/seoul.jpg">
                         <p class="product-card-info"><span class="rating">Round Trip</span><br><br><span class="rating-equivalent">
                             Jun 10: 2:40AM<br>Jun 17: 8:50AM</span></p>
-                        <a href="flightbooked.html" onclick="if (!confirm('Are you sure you want to book this flight?')) return false;"><button class="card-btn">book a flight</button></a>
+                        <button class="card-btn" onclick="addToCart(this)">book a stay</button>
                     </div>
                 </div>
                 <div class="product-info">
@@ -137,10 +147,10 @@
             <div class="product-card">
                 <div class="product-image">
                     <img src="images/bangkok.jpg" class="product-thumb" alt="">
-                    <div class="product-card-body">
+                    <div class="product-card-body" data-name="Bangkok" data-price="238.29" data-img="images/bangkok.jpg">
                         <p class="product-card-info"><span class="rating">Round Trip</span><br><br><span class="rating-equivalent">
                             Jun 11: 7:25AM<br>Jun 18: 11:15AM</span></p>
-                        <a href="flightbooked.html" onclick="if (!confirm('Are you sure you want to book this flight?')) return false;"><button class="card-btn">book a flight</button></a>
+                        <button class="card-btn" onclick="addToCart(this)">book a stay</button>
                     </div>
                 </div>
                 <div class="product-info">
@@ -152,10 +162,10 @@
             <div class="product-card">
                 <div class="product-image">
                     <img src="images/singapore.jpg" class="product-thumb" alt="">
-                    <div class="product-card-body">
+                    <div class="product-card-body" data-name="Singapore" data-price="298.08" data-img="images/singapore.jpg">
                         <p class="product-card-info"><span class="rating">Round Trip</span><br><br><span class="rating-equivalent">
                             Jun 12: 8:15PM<br>Jun 19: 1:30AM</span></p>
-                        <a href="flightbooked.html" onclick="if (!confirm('Are you sure you want to book this flight?')) return false;"><button class="card-btn">book a flight</button></a>
+                        <button class="card-btn" onclick="addToCart(this)">book a stay</button>
                     </div>
                 </div>
                 <div class="product-info">
@@ -167,10 +177,10 @@
             <div class="product-card">
                 <div class="product-image">
                     <img src="images/davao.jpg" class="product-thumb" alt="">
-                    <div class="product-card-body">
+                    <div class="product-card-body" data-name="Davao City" data-price="159.63" data-img="images/davao.jpg">
                         <p class="product-card-info"><span class="rating">Round Trip</span><br><br><span class="rating-equivalent">
                             Jun 13: 10:35AM<br>Jun 20: 8:00PM</span></p>
-                        <a href="flightbooked.html" onclick="if (!confirm('Are you sure you want to book this flight?')) return false;"><button class="card-btn">book a flight</button></a>
+                        <button class="card-btn" onclick="addToCart(this)">book a stay</button>
                     </div>
                 </div>
                 <div class="product-info">
@@ -182,10 +192,10 @@
             <div class="product-card">
                 <div class="product-image">
                     <img src="images/cagayan.jpg" class="product-thumb" alt="">
-                    <div class="product-card-body">
+                    <div class="product-card-body" data-name="Cagayan De Oro" data-price="145.70" data-img="images/cagayan.jpg">
                         <p class="product-card-info"><span class="rating">Round Trip</span><br><br><span class="rating-equivalent">
                             Jun 14: 6:15AM<br>Jun 20: 5:55PM</span></p>
-                        <a href="flightbooked.html" onclick="if (!confirm('Are you sure you want to book this flight?')) return false;"><button class="card-btn">book a flight</button></a>
+                        <button class="card-btn" onclick="addToCart(this)">book a stay</button>
                     </div>
                 </div>
                 <div class="product-info">
@@ -197,10 +207,10 @@
             <div class="product-card">
                 <div class="product-image">
                     <img src="images/bacolod.jpg" class="product-thumb" alt="">
-                    <div class="product-card-body">
+                    <div class="product-card-body" data-name="Bacolod" data-price="166.10" data-img="images/bacolod.jpg">
                         <p class="product-card-info"><span class="rating">Round Trip</span><br><br><span class="rating-equivalent">
                             Jun 14: 4:30AM<br>Jun 21: 5:35PM</span></p>
-                        <a href="flightbooked.html" onclick="if (!confirm('Are you sure you want to book this flight?')) return false;"><button class="card-btn">book a flight</button></a>
+                        <button class="card-btn" onclick="addToCart(this)">book a stay</button>
                     </div>
                 </div>
                 <div class="product-info">
@@ -212,10 +222,10 @@
             <div class="product-card">
                 <div class="product-image">
                     <img src="images/kalibo.jpg" class="product-thumb" alt="">
-                    <div class="product-card-body">
+                    <div class="product-card-body" data-name="Kalibo" data-price="133.89" data-img="images/kalibo.jpg">
                         <p class="product-card-info"><span class="rating">Round Trip</span><br><br><span class="rating-equivalent">
                             Jun 13: 6:25PM<br>Jun 20: 8:15PM</span></p>
-                        <a href="flightbooked.html" onclick="if (!confirm('Are you sure you want to book this flight?')) return false;"><button class="card-btn">book a flight</button></a>
+                        <button class="card-btn" onclick="addToCart(this)">book a stay</button>
                     </div>
                 </div>
                 <div class="product-info">

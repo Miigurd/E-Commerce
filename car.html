@@ -21,10 +21,20 @@
                 <li><a href="stays.html">Stays</a></li>
                 <li><a href="flights.html">Flights</a></li>
                 <li><a href="#">Rent-A-Car</a></li>
+                <li><button class="ticket-link" onclick="showDiv()"><i class="ri-car-fill"><span id="ticket-items">0</span></i></button></li>
             </ul>
         </div>
     </nav>
     <br>
+    <div id="ticket" class="ticket">
+        <button class="close-btn" onclick="closeDiv()"><i class="ri-close-large-fill"></i></button>
+        <h2 class="ticket-heading">Pending Tickets</h2>
+        <ul id="ticket-items-list" class="ticket-items-list"></ul>
+        <p>Total Price: $<span id="total-price">0</span></p>
+        <button class="book-btn">
+            <a href="carbooked.html" onclick="if (!confirm('Are you sure you want to book this place/s?')) return false;">Book</a>
+        </button>
+    </div>
     <div class="form">
         <form>
             <div class="search">
@@ -37,45 +47,45 @@
     <h2 class="product-category" style="margin-left: 20px;">availabe rental cars near you</h2>
     <div class="car-container">
         <div class="car-info">
-            <div class="car-details">
+            <div class="car-details" data-name="Ford Fiesta" data-price="189.04" data-img="images/ford.jpg">
                 <h2 class="car-brand">Ford Fiesta<br><span class="car-specs">5 Seats<br>1 Large Bag<br>1 Small Bag<br>Unlimited Mileage</span><br><br>$189.04</h2>
-                <a href="carbooked.html" onclick="if (!confirm('Are you sure you want to rent this car?')) return false;"><button class="car-btn">rent</button></a>
+                <button class="car-btn" onclick="addToCart(this)">rent</button>
             </div>
             <div class="car-image">
                 <img src="images/ford.jpg" alt="">
             </div>
         </div>
         <div class="car-info">
-            <div class="car-details">
+            <div class="car-details" data-name="Mitsubishi Xpander" data-price="217.03" data-img="images/mitsubishi.jpg">
                 <h2 class="car-brand">Mitsubishi Xpander<br><span class="car-specs">7 Seats<br>1 Large Bag<br>1 Small Bag<br>Unlimited Mileage</span><br><br>$217.03</h2>
-                <a href="carbooked.html" onclick="if (!confirm('Are you sure you want to rent this car?')) return false;"><button class="car-btn">rent</button></a>
+                <button class="car-btn" onclick="addToCart(this)">rent</button>
             </div>
             <div class="car-image">
                 <img src="images/mitsubishi.jpg" alt="">
             </div>
         </div>
         <div class="car-info">
-            <div class="car-details">
+            <div class="car-details" data-name="Nissan X-Trail" data-price="238.02" data-img="images/nissan.jpg">
                 <h2 class="car-brand">Nissan X-Trail<br><span class="car-specs">5 Seats<br>2 Large Bags<br>1 Small Bag<br>Unlimited Mileage</span><br><br>$238.02</h2>
-                <a href="carbooked.html" onclick="if (!confirm('Are you sure you want to rent this car?')) return false;"><button class="car-btn">rent</button></a>
+                <button class="car-btn" onclick="addToCart(this)">rent</button>
             </div>
             <div class="car-image">
                 <img src="images/nissan.jpg" alt="">
             </div>
         </div>
         <div class="car-info">
-            <div class="car-details">
+            <div class="car-details" data-name="Honda City" data-price="189.04" data-img="images/Honda.jpg">
                 <h2 class="car-brand">Honda City<br><span class="car-specs">5 Seats<br>1 Large Bag<br>1 Small Bag<br>Unlimited Mileage</span><br><br>$189.04</h2>
-                <a href="carbooked.html" onclick="if (!confirm('Are you sure you want to rent this car?')) return false;"><button class="car-btn">rent</button></a>
+                <button class="car-btn" onclick="addToCart(this)">rent</button>
             </div>
             <div class="car-image">
                 <img src="images/honda.jpg" alt="">
             </div>
         </div>
         <div class="car-info">
-            <div class="car-details">
+            <div class="car-details" data-name="Hyundai Accent" data-price="204.15" data-img="images/hyundai.jpg">
                 <h2 class="car-brand">Hyundai Accent<br><span class="car-specs">4 Seats<br>1 Large Bag<br>1 Small Bag<br>Unlimited Mileage</span><br><br>$204.15</h2>
-                <a href="carbooked.html" onclick="if (!confirm('Are you sure you want to rent this car?')) return false;"><button class="car-btn">rent</button></a>
+                <button class="car-btn" onclick="addToCart(this)">rent</button>
             </div>
             <div class="car-image">
                 <img src="images/hyundai.jpg" alt="">
