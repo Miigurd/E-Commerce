@@ -46,9 +46,6 @@ nav .menu{
 .menu ul a::before{
     transition: all .5s;
 }
-.menu ul a:hover{
-    font-weight: bold;
-}
 .menu ul a::after{
     position: absolute;
     bottom: 0;
